@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import YearFilter from "../components/YearFilter.astro";
+import MemoryCard from "../components/MemoryCard.astro";
+import { getAllMemories, getYears } from "../lib/memories";
+
+const memories = getAllMemories();
+const years = getYears();
+---
+
+<BaseLayout title="Memories" description="A collection of moments worth remembering">
+  <Header />
+
+  <main class="pt-20 md:pt-24 px-4 md:px-8 pb-16">
+    <div class="max-w-[1200px] mx-auto">
+      <!-- Hero text -->
+      <div class="mb-8 md:mb-12 pt-4">
+        <h1
+          class="font-heading text-4xl md:text-6xl lg:text-7xl font-semibold text-[var(--color-text-primary)] leading-[1.1] tracking-tight"
+        >
+          Những khoảnh khắc
+        </h1>
+        <p
+          class="mt-3 md:mt-4 font-body text-base md:text-lg text-[var(--color-text-secondary)] max-w-md"
+        >
+          {memories.length} kỷ niệm &middot; {memories.reduce((sum, m) => sum + m.photos.length, 0)} bức ảnh
+        </p>
+      </div>
+
+      <!-- Year filter -->
+      <div class="mb-6 md:mb-8">
+        <YearFilter years={years} />
+      </div>
+
+      <!-- Memory grid -->
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
+      >
+        {
+          memories.map((memory, i) => (
+            <MemoryCard
+              title={memory.title}
+              slug={memory.slug}
+              year={memory.year}
+              dateDisplay={memory.dateDisplay}
+              cover={memory.cover}
+              index={i}
+              photoCount={memory.photos.length}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="pb-8 text-center">
+    <p class="font-body text-xs text-[var(--color-text-secondary)] tracking-wide opacity-50">
+      Made with love
+    </p>
+  </footer>
+</BaseLayout>

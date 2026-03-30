@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --color-bg: #FAF8F5;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #1A1614;
+  --color-text-secondary: #8C7E74;
+  --color-accent: #C4956A;
+  --color-accent-light: #D4AD8A;
+  --color-scrim: rgba(18, 16, 14, 0.6);
+  --color-surface-dark: #1A1614;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* Grain texture overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* View Transition animations */
+::view-transition-old(memory-image) {
+  animation: fade-out 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+::view-transition-new(memory-image) {
+  animation: fade-in 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.04); }
+}
+
+/* Ken Burns keyframes — 4 directions */
+@keyframes ken-burns-1 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.18) translate(-2%, -1.5%); }
+}
+
+@keyframes ken-burns-2 {
+  0% { transform: scale(1.1) translate(-2%, -1%); }
+  100% { transform: scale(1) translate(1%, 1.5%); }
+}
+
+@keyframes ken-burns-3 {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(2%, -1%); }
+}
+
+@keyframes ken-burns-4 {
+  0% { transform: scale(1.12) translate(1%, 1%); }
+  100% { transform: scale(1) translate(-1%, -0.5%); }
+}
+
+/* Staggered entrance */
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress bar fill */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Slide crossfade */
+@keyframes slide-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

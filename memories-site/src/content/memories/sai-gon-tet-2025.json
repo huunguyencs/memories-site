@@ -1,0 +1,16 @@
+{
+  "title": "Sài Gòn Tết",
+  "slug": "sai-gon-tet-2025",
+  "year": 2025,
+  "date": "2025-02",
+  "dateDisplay": "Tháng 2, 2025",
+  "cover": "https://picsum.photos/seed/saigon-cover/800/1067",
+  "music": "/memories-site/music/sai-gon-tet-2025.mp3",
+  "photos": [
+    "https://picsum.photos/seed/saigon1/1920/1280",
+    "https://picsum.photos/seed/saigon2/1920/1280",
+    "https://picsum.photos/seed/saigon3/1920/1280",
+    "https://picsum.photos/seed/saigon4/1920/1280",
+    "https://picsum.photos/seed/saigon5/1920/1280"
+  ]
+}

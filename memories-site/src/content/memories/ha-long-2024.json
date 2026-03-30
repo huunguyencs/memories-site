@@ -1,0 +1,15 @@
+{
+  "title": "Hạ Long",
+  "slug": "ha-long-2024",
+  "year": 2024,
+  "date": "2024-06",
+  "dateDisplay": "Tháng 6, 2024",
+  "cover": "https://picsum.photos/seed/halong-cover/800/1067",
+  "music": "/memories-site/music/ha-long-2024.mp3",
+  "photos": [
+    "https://picsum.photos/seed/halong1/1920/1280",
+    "https://picsum.photos/seed/halong2/1920/1280",
+    "https://picsum.photos/seed/halong3/1920/1280",
+    "https://picsum.photos/seed/halong4/1920/1280"
+  ]
+}

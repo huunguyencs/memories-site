@@ -1,0 +1,80 @@
+---
+interface Props {
+  years: number[];
+}
+
+const { years } = Astro.props;
+---
+
+<nav class="year-filter flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide" aria-label="Filter by year">
+  <button
+    class="year-pill active font-body text-sm font-medium px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap"
+    data-year="all"
+  >
+    Tất cả
+  </button>
+  {
+    years.map((year) => (
+      <button
+        class="year-pill font-body text-sm font-medium px-4 py-1.5 rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap"
+        data-year={year}
+      >
+        {year}
+      </button>
+    ))
+  }
+</nav>
+
+<style>
+  .year-pill {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1.5px solid transparent;
+  }
+
+  .year-pill:hover {
+    color: var(--color-text-primary);
+    background: rgba(196, 149, 106, 0.08);
+  }
+
+  .year-pill.active {
+    background: var(--color-text-primary);
+    color: var(--color-bg);
+    border-color: var(--color-text-primary);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pills = document.querySelectorAll<HTMLButtonElement>(".year-pill");
+    const cards = document.querySelectorAll<HTMLElement>("[data-memory-year]");
+
+    pills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        pills.forEach((p) => p.classList.remove("active"));
+        pill.classList.add("active");
+
+        const year = pill.dataset.year;
+
+        cards.forEach((card, i) => {
+          const show = year === "all" || card.dataset.memoryYear === year;
+          card.style.display = show ? "" : "none";
+          if (show) {
+            card.style.animationDelay = `${i * 50}ms`;
+            card.style.animation = "none";
+            card.offsetHeight; // force reflow
+            card.style.animation = "";
+          }
+        });
+      });
+    });
+  });
+</script>

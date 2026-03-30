@@ -1,0 +1,18 @@
+{
+  "title": "Hội An",
+  "slug": "hoi-an-2025",
+  "year": 2025,
+  "date": "2025-08",
+  "dateDisplay": "Tháng 8, 2025",
+  "cover": "https://picsum.photos/seed/hoian-cover/800/1067",
+  "music": "/memories-site/music/hoi-an-2025.mp3",
+  "photos": [
+    "https://picsum.photos/seed/hoian1/1920/1280",
+    "https://picsum.photos/seed/hoian2/1920/1280",
+    "https://picsum.photos/seed/hoian3/1920/1280",
+    "https://picsum.photos/seed/hoian4/1920/1280",
+    "https://picsum.photos/seed/hoian5/1920/1280",
+    "https://picsum.photos/seed/hoian6/1920/1280",
+    "https://picsum.photos/seed/hoian7/1920/1280"
+  ]
+}
