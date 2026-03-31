@@ -1,17 +1,16 @@
 {
-  "title": "Đà Lạt",
-  "slug": "da-lat-2026",
-  "year": 2026,
-  "date": "2026-01",
-  "dateDisplay": "Tháng 1, 2026",
-  "cover": "https://picsum.photos/seed/dalat-cover/800/1067",
-  "music": "/memories-site/music/da-lat-2026.mp3",
+  "title": "Vũng Tàu 2024",
+  "slug": "vung-tau-2024",
+  "year": 2024,
+  "date": "2024-11",
+  "dateDisplay": "Tháng 11, 2024",
+  "cover": "https://res.cloudinary.com/dryyik2kw/image/upload/v1774869810/D2F77705-8A98-448F-8E08-B78492FFA102_1_105_c_xpwami.jpg",
+  "music": "/memories-site/music/vung-tau-2024.mp3",
   "photos": [
-    "https://picsum.photos/seed/dalat1/1280/1920",
-    "https://picsum.photos/seed/dalat2/1280/1920",
-    "https://picsum.photos/seed/dalat3/1280/1920",
-    "https://picsum.photos/seed/dalat4/1280/1920",
-    "https://picsum.photos/seed/dalat5/1280/1920",
-    "https://picsum.photos/seed/dalat6/1280/1920"
+    "https://res.cloudinary.com/dryyik2kw/image/upload/v1774869875/9AB1A07E-3E8F-4DB9-AA62-231F04C3FE38_1_105_c_m1atgs.jpg",
+    "https://res.cloudinary.com/dryyik2kw/image/upload/v1774869905/65153ABB-E35B-444E-92B7-A5FB9DD2AB27_1_105_c_c54eox.jpg",
+    "https://res.cloudinary.com/dryyik2kw/image/upload/v1774869905/65153ABB-E35B-444E-92B7-A5FB9DD2AB27_1_105_c_c54eox.jpg",
+    "https://res.cloudinary.com/dryyik2kw/image/upload/v1774870009/E5AFB5D4-6E49-4DE6-9227-553C0B962255_1_105_c_yulpeu.jpg",
+    "https://res.cloudinary.com/dryyik2kw/image/upload/v1774870037/721B8577-D8F3-49F8-83FE-25DA21A36D19_1_102_o_nx3n94.jpg"
   ]
 }
