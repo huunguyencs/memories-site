@@ -13,7 +13,7 @@ const { slug } = Astro.params;
 const memory = getMemoryBySlug(slug as string);
 
 if (!memory) {
-  return Astro.redirect("/memories-site/");
+  return Astro.redirect("/");
 }
 ---
 

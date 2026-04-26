@@ -13,7 +13,7 @@ const { title, slug, year, dateDisplay, cover, index, photoCount } = Astro.props
 ---
 
 <a
-  href={`/memories-site/memories/${slug}/`}
+  href={`/memories/${slug}/`}
   class="memory-card group relative block overflow-hidden rounded-2xl cursor-pointer"
   data-memory-year={year}
   style={`animation-delay: ${index * 60}ms`}
