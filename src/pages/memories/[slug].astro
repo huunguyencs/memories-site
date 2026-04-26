@@ -80,7 +80,7 @@ if (!memory) {
           </svg>
         </button>
         <a
-          href="/memories-site/"
+          href="/"
           id="btn-close"
           class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200 cursor-pointer backdrop-blur-sm"
           aria-label="Close"
@@ -161,7 +161,7 @@ if (!memory) {
           </svg>
         </button>
         <a
-          href="/memories-site/"
+          href="/"
           class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200 cursor-pointer"
           aria-label="Close"
         >
@@ -391,7 +391,7 @@ if (!memory) {
         showControls();
       }
       if (e.key === "Escape") {
-        window.location.href = "/memories-site/";
+        window.location.href = "/";
       }
     });
 
@@ -417,7 +417,7 @@ if (!memory) {
         showControls();
       } else if (dy > 80 && Math.abs(dy) > Math.abs(dx)) {
         // Swipe down to dismiss
-        window.location.href = "/memories-site/";
+        window.location.href = "/";
       }
     }, { passive: true });
 
